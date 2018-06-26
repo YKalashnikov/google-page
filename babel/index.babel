@@ -1,0 +1,66 @@
+class Google extends React.Component{
+
+  handleKeyPress=(event)=>{
+    if(event.charCode ===13){
+      var getString=JSON.stringify(event.target.value);
+     var converFromString= JSON.parse(getString)
+    //  console.log(data)
+      window.open('https://www.google.ca/#q=' + converFromString);
+
+    }
+  }
+  render(){
+    return(
+      <div>
+        <table className="firstTable">
+          <tr>
+            <th className="about">About</th>
+            <th className="store">Store</th>
+            <th className="gmail">Gmail</th>
+            <th className="img">Images</th>
+            <th className="square">
+              <a href="" ><img src="http://i1243.photobucket.com/albums/gg549/ermiasgiovanni/google_apps_zps7bzspske.png"/>
+              </a></th>
+            <th className="bell">
+              <a href=""><img id="notifications_bell" src="http://i1243.photobucket.com/albums/gg549/ermiasgiovanni/notifications_bell_zpsy1i3r9mi.jpg"/>
+              </a></th>
+            <th className="icon">
+              <a href=""><img id="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDA7_MmC1Xy6989HuhkQ3rfBzr3BqRhQGf4AAM4dqvVF4hcql"/></a></th>
+          </tr>
+        </table>
+
+        <div className="box">
+          <div>
+            <img alt="Google Logo" src="http://i0.kym-cdn.com/photos/images/original/001/019/423/eea.gif" height="140" width="390"/>
+          </div>
+          <div className="search">
+<input className="input1" type="text" title="search" id="microphone" maxlength="10" onKeyPress={this.handleKeyPress}/>        
+          </div>
+
+          <div>
+            <button> Google Search </button>
+            <button> I'm Feeling Lucky </button>
+          </div>
+          <p>Google offered in:</p>
+        </div>
+        <footer>
+          <table className="secondTable">
+            <tr>
+              <th className="advertising">Advertising</th>
+              <th className="business">Business</th>
+              <th className="privacy">Privacy</th>
+              <th className="term">Term</th>
+              <th className="setting">Settings</th>
+            </tr>
+          </table>
+        </footer>
+
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(
+  <Google />,
+  document.getElementById("app")
+)
